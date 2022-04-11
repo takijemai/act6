@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 

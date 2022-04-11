@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-buttons>
+            <ion-back-button>Back</ion-back-button>
+        </ion-buttons>
+        <ion-title>Foto</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div>
+        <img *ngIf="!photo" src="https://pngimage.net/wp-content/uploads/2018/05/empty-image-png-7.png" />
+        <img alt="Photo" [src]="photo" *ngIf="photo">
+    </div>
+    <ion-card *ngIf="photo && geolocation">
+        <ion-card-header>
+            <ion-card-title>Coordinates</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>Latitude: {{ data.latitude }}</ion-item>
+            <ion-item>Longitude: {{ data.longitude }}</ion-item>
+            <ion-item>Accuracy: {{ data.accuracy }}</ion-item>
+        </ion-card-content>
+    </ion-card>
+    <div>
+        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+            <ion-fab-button (click)="takePicture()">
+                <ion-icon name="camera"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </div>

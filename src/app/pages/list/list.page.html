@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-buttons>
+            <ion-back-button>Back</ion-back-button>
+        </ion-buttons>
+        <ion-title>list</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of lista" (click)="showToast()">
+        <ion-card-header>
+            <ion-card-title>Foto {{item.id}}</ion-card-title>
+            <ion-chip>
+                <ion-label>Latitude</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label>Longitude</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label>Accuracy</ion-label>
+            </ion-chip>
+
+        </ion-card-header>
+
+        <ion-card-content class="img">
+            <img src="{{item.image}}" />
+        </ion-card-content>
+    </ion-card>
+</ion-content>
